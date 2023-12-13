@@ -7,7 +7,7 @@ pipeline {
 	AWS_DEFAULT_REGION = "ap-southeast-1"
   }
   stages{ 
-    stage("create an EKS Cluster") {
+    stage("delete an EKS Cluster") {
 	  steps {
 	    script {
 		  dir('terraform/eks') {
