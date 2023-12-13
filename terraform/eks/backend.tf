@@ -2,14 +2,20 @@ terraform {
   required_providers {
     aws = {
       source = "hashicorp/aws"
-      version = "~> 5.21"
+      version = ">= 5.0.0"
     }
   }
 
   backend "s3" {
-    bucket         = "nasir-cicd-eks-terraform-jenkins-voting-app"
-    key            = "eks/terraform.tfstate"
+    encrypt = true
+    bucket = "nasir-cicd-eks-terraform-jenkins-voting-app"
+    key = "eks/terraform.tfstate"
     dynamodb_table = "nasir-cicd-eks-terraform-jenkins-voting-app"
-    region         = "ap-southeast-1"
+    region = "ap-southeast-1"
   }
-}  
+
+}
+
+provider "aws" {
+  region = "ap-southeast-1"
+}

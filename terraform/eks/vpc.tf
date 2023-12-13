@@ -13,16 +13,16 @@ module "nasir-eks-cicd-vpc" {
   enable_dns_hostnames = true
 
   tags = {
-    "kubernetes.io/cluster/nasir-cicd-eks-terraform-jenkins-voting-app" = "shared"
+    "kubernetes.io/cluster/nasir-cicd-eks-cluster" = "shared"
   }
 
   public_subnet_tags = {
-    "kubernetes.io/cluster/nasir-cicd-eks-terraform-jenkins-voting-app" = "shared"
+    "kubernetes.io/cluster/nasir-cicd-eks-cluster" = "shared"
     "kubernetes.io/role/elb"                  = 1
   }
 
   private_subnet_tags = {
-    "kubernetes.io/cluster/nasir-cicd-eks-terraform-jenkins-voting-app" = "shared"
+    "kubernetes.io/cluster/nasir-cicd-eks-cluster" = "shared"
     "kubernetes.io/role/internal-elb"         = 1
   }
 }
