@@ -11,6 +11,7 @@ pipeline {
 	  steps {
 	    script {
 		  dir('terraform/eks') {
+		    sh "terraform init"
 		    sh "terraform destroy -auto-approve -lock=false"
 		  }	
 		}	
